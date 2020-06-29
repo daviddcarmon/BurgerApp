@@ -13,7 +13,7 @@ app.set("view engine", "handlebars");
 
 const PORT = process.env.PORT || 8080;
 
-const routes = require("./controllers/orm.js")
+const routes = require("./controllers/burgerController.js")
 
 app.use(routes);
 
