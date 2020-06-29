@@ -2,10 +2,10 @@ const connection = require("./connection.js");
 
 const orm = {
   selectAll: (table, cb) => {
-    connection.query(`select * from ${table};`, function (err, data) {
+    connection.query(`select * from ?;`,table, function (err, data) {
       if (err) {
         console.log(`Select all function not working. Contact programmer.`);
-        res.status(500).end();
+        // res.status(500).end();
       }
       cb(data);
     });
@@ -17,7 +17,7 @@ const orm = {
       function (err, data) {
         if (err) {
           console.log(`Update function not working. Contact programmer.`);
-          res.status(500).end();
+          // res.status(500).end();
         }
         cb(data);
       }
@@ -31,7 +31,7 @@ const orm = {
     ) {
       if (err) {
         console.log(`Update function not working. Contact programmer.`);
-        res.status(500).end();
+        // res.status(500).end();
       }
       cb(data);
     });
