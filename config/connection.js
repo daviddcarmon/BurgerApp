@@ -16,7 +16,7 @@ connection.connect((err) => {
     console.log(`Not Connected, check code! ${err.stack}`);
   }
   console.log(
-    `Listening on http://localhost:${PORT} connectionId ${connection.threadId}`
+    `Listening on http://localhost:${connection.port} connectionId ${connection.threadId}`
   );
 });
 

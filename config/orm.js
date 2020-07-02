@@ -2,23 +2,28 @@ const connection = require("./connection.js");
 
 const orm = {
   selectAll: (table, cb) => {
-    connection.query(`select * from ?;`,table, function (err, data) {
+    connection.query(`select * from ??;`, table, function (err, data) {
       if (err) {
         console.log(`Select all function not working. Contact programmer.`);
         // res.status(500).end();
+
+        console.log(table);
       }
       cb(data);
     });
   },
 
-  insertOne: (table, col, val, cb) => {
+  insertOne: (table, colVal, cb) => {
     connection.query(
-      `insert into ${table}(${col.toSting()}) values(${val})`,
+      //update col.toString() SET to a {burger: colVal}
+      `insert into ?? set ?`,
+      [{table},{ burger: colVal}],
       function (err, data) {
         if (err) {
           console.log(`Update function not working. Contact programmer.`);
           // res.status(500).end();
         }
+        console.log(data);
         cb(data);
       }
     );
