@@ -8,8 +8,8 @@ let burger = {
       cb(data);
     });
   },
-  insertOne: function (cols, val, cb) {
-    orm.insertOne("burgers", cols, val, function (data) {
+  insertOne: function (val, cb) {
+    orm.insertOne("burgers", val, function (data) {
       cb(data);
     });
   },

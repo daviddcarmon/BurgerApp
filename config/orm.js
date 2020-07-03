@@ -17,7 +17,7 @@ const orm = {
     connection.query(
       //update col.toString() SET to a {burger: colVal}
       `insert into ?? set ?`,
-      [{table},{ burger: colVal}],
+      [{ table }, { burger: colVal}],
       function (err, data) {
         if (err) {
           console.log(`Update function not working. Contact programmer.`);
