@@ -13,13 +13,15 @@ const orm = {
     });
   },
 
-  insertOne: (table, colVal, cb) => {
+  insertOne: (table, val, cb) => {
+    // console.log(`${table},${col},${val}`);
     connection.query(
       //update col.toString() SET to a {burger: colVal}
       `insert into ?? set ?`,
-      [{ table }, { burger: colVal}],
+      [table, val],
       function (err, data) {
         if (err) {
+          console.log(err);
           console.log(`Update function not working. Contact programmer.`);
           // res.status(500).end();
         }
@@ -30,7 +32,7 @@ const orm = {
   },
 
   updateOne: (table, val, condition, cb) => {
-    connection.query(`update ${table} set ${val} where ${condition}`, function (
+    connection.query(`update ?? set ? where ?`,[table,val,condition], function (
       err,
       data
     ) {

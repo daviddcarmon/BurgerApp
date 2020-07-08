@@ -11,25 +11,27 @@ router.get("/", (req, res) => {
       burgers: data,
     };
     // console.log(burgerList.burgers[0].burger);
-    res.render("index", { burgers: data });
+    res.render("index", burgerList);
   });
+});
 
-  router.post("/api/burgers", (req, res) => {
-    burger.insertOne(["burger"], [req.body.name], function (result) {
-      res.json({ newBurger: result.burger });
-    });
+router.post("/api/burgers", (req, res) => {
+  burger.insertOne(req.body, function (result, err) {
+    if (err) {
+      console.log(`Error at post`);
+    }
+    res.json({ newBurger: result.burger });
   });
+});
 
-  router.put("/api/burgers/:id", function (req, res) {
-    let updateId = burger.updateOne({ devoured: false }, updateId, function (
-      result
-    ) {
-      if (result.changedRows === 0) {
-        return res.status(404).end();
-      }
-    });
-    res.status(200).end();
+router.put("/api/burgers/:id", function (req, res) {
+  let updateId = { id: req.params.id };
+  burger.updateOne({ devoured: true }, updateId, function (result) {
+    if (result.changedRows === 0) {
+      return res.status(404).end();
+    }
   });
+  res.status(200).end();
 });
 
 module.exports = router;

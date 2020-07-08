@@ -1,5 +1,5 @@
  -- Drop database if exists
-DROP TABLE IF EXISTS burger_db;
+DROP DATABASE IF EXISTS burger_db;
 
 -- Create database
 CREATE DATABASE burger_db;

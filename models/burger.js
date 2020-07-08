@@ -9,7 +9,7 @@ let burger = {
     });
   },
   insertOne: function (val, cb) {
-    orm.insertOne("burgers", val, function (data) {
+    orm.insertOne("burgers",val, function (data) {
       cb(data);
     });
   },
