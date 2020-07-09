@@ -41,8 +41,16 @@ $(function () {
     });
   });
 
-  $(".btnDelete").on("click", (event) => {
+  $(".btnDelete").on("click", function (event) {
     event.preventDefault();
     let id = $(this).data("id");
+    // undefined
+    console.log(typeof id);
+    $.ajax("/api/burgers/" + id, {
+      type: "DELETE",
+    }).then(() => {
+      console.log(`Deleted ${id}`);
+      location.reload();
+    });
   });
 });

@@ -1,0 +1,17 @@
+body {
+  padding: 20px;
+  margin: 20px;
+}
+h1 {
+  font-size: 75px;
+  margin-bottom: 25px;
+}
+
+ul {
+  font-size: 28px;
+  list-style-type: none;
+}
+
+label {
+  font-size: 28px;
+}

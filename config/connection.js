@@ -10,15 +10,18 @@ const connection = mysql.createConnection({
   database: "burger_db",
 });
 
-// making the connection to database
-connection.connect((err) => {
-  if (err) {
-    console.log(`Not Connected, check code! ${err.stack}`);
-  }
-  console.log(
-    `Listening on http://localhost:${connection.port} connectionId ${connection.threadId}`
-  );
-});
-
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  // making the connection to database
+  connection.connect((err) => {
+    if (err) {
+      console.log(`Not Connected, check code! ${err.stack}`);
+    }
+    console.log(
+      `Listening on http://localhost:${connection.port} connectionId ${connection.threadId}`
+    );
+  });
+}
 // export connection to use in ORM
 module.exports = connection;

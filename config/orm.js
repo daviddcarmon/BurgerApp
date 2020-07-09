@@ -32,12 +32,27 @@ const orm = {
   },
 
   updateOne: (table, val, condition, cb) => {
-    connection.query(`update ?? set ? where ?`,[table,val,condition], function (
+    connection.query(
+      `update ?? set ? where ?`,
+      [table, val, condition],
+      function (err, data) {
+        if (err) {
+          console.log(`Update function not working. Contact programmer.`);
+          // res.status(500).end();
+        }
+        cb(data);
+      }
+    );
+  },
+
+  deleteOne: (table, condition, cb) => {
+    connection.query(`delete from ?? where ?`, [table, condition], function (
       err,
       data
     ) {
       if (err) {
-        console.log(`Update function not working. Contact programmer.`);
+        console.log(`Delete function not working. Contact programmer.`);
+        console.log(err);
         // res.status(500).end();
       }
       cb(data);

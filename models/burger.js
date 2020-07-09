@@ -9,12 +9,17 @@ let burger = {
     });
   },
   insertOne: function (val, cb) {
-    orm.insertOne("burgers",val, function (data) {
+    orm.insertOne("burgers", val, function (data) {
       cb(data);
     });
   },
   updateOne: function (val, condition, cb) {
     orm.updateOne("burgers", val, condition, function (data) {
+      cb(data);
+    });
+  },
+  deleteOne: function (condition, cb) {
+    orm.deleteOne("burgers", condition, function (data) {
       cb(data);
     });
   },
