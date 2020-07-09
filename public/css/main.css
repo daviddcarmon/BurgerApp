@@ -1,13 +1,27 @@
 body {
   padding: 20px;
   margin: 20px;
-  font: rgba(255, 255, 255, 0.74);
+  color: rgb(230, 150, 3);
+  text-shadow: 2px 0 0 #050100, -2px 0 0 #050100, 0px -2px 1px #050100,
+    0 2px 0 #050100, 0 -2px 0 #050100;
   background-image: url(../img/krustyburger.jpg);
   background-size: cover;
 }
+
+button {
+  background: none;
+  color: rgb(230, 150, 3);
+  text-shadow: 2px 0 0 #050100, -2px 0 0 #050100, 0px -2px 1px #050100,
+    0 2px 0 #050100, 0 -2px 0 #050100;
+  border: none;
+}
+
 h1 {
   font-size: 75px;
   margin-bottom: 25px;
+  color: rgb(230, 150, 3);
+  text-shadow: 2px 0 0 #050100, -2px 0 0 #050100, 0px -2px 1px #050100,
+    0 2px 0 #050100, 0 -2px 0 #050100;
 }
 
 ul {
@@ -17,4 +31,12 @@ ul {
 
 label {
   font-size: 28px;
+}
+
+input {
+  background: none;
+  color: rgb(230, 150, 3);
+  text-shadow: 2px 0 0 #050100, -2px 0 0 #050100, 0px -2px 1px #050100,
+    0 2px 0 #050100, 0 -2px 0 #050100;
+    border: outset;
 }
