@@ -11,7 +11,7 @@ const connection = mysql.createConnection({
 });
 
 if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
+  let connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   // making the connection to database
   connection.connect((err) => {
