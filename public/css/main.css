@@ -1,7 +1,8 @@
 body {
   padding: 20px;
   margin: 20px;
-  background-image: url(../img/burger.jpg);
+  font: rgba(255, 255, 255, 0.74);
+  background-image: url(../img/krustyburger.jpg);
   background-size: cover;
 }
 h1 {
