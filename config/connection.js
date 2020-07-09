@@ -1,7 +1,7 @@
 // require in mysql
 const mysql = require("mysql");
 
-const connection
+let connection;
 // create connection to database using mysql
 
 if (process.env.JAWSDB_URL) {
