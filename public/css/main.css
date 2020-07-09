@@ -1,6 +1,7 @@
 body {
   padding: 20px;
   margin: 20px;
+  background-image: url(../img/burger.jpg);
 }
 h1 {
   font-size: 75px;
