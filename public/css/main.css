@@ -2,6 +2,7 @@ body {
   padding: 20px;
   margin: 20px;
   background-image: url(../img/burger.jpg);
+  background-size: cover;
 }
 h1 {
   font-size: 75px;
